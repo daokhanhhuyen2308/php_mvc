@@ -1,0 +1,405 @@
+ /* Kết nối font Poppins từ Google Fonts */
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+ /* Đặt font Poppins cho toàn bộ trang */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Poppins', sans-serif;
+     background-color: #f4f4f4;
+     background: linear-gradient(-45deg, tomato, lightgreen, pink, orange);
+     background-size: 400% 400%;
+     animation: gradient 15s ease infinite;
+ }
+
+ @keyframes gradient {
+     0% {
+         background-position: 0% 30%;
+     }
+
+     30% {
+         background-position: 30% 60%;
+     }
+
+     60% {
+         background-position: 60% 100%;
+     }
+
+     100% {
+         background-position: 100% 0%;
+     }
+ }
+
+ /* General header styling */
+ .admin-header {
+     background-color: #2c3e50;
+     color: #fff;
+     padding: 15px 30px;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+     margin-bottom: 20px;
+ }
+
+ .header-container {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     max-width: 1200px;
+     margin: 0 auto;
+ }
+
+ .logo {
+     max-height: 50px;
+     transition: transform 0.3s ease;
+ }
+
+ .logo-link:hover .logo {
+     transform: scale(1.1);
+ }
+
+ .search-form {
+     display: flex;
+     align-items: center;
+     flex: 1;
+     margin: 0 20px;
+     max-width: 500px;
+ }
+
+ .search-form input {
+     width: 50%;
+     padding: 10px 15px;
+     border: 1px solid #ddd;
+     border-radius: 20px 0 0 20px;
+     outline: none;
+     font-size: 14px;
+ }
+
+ .search-form .search-btn {
+     padding: 12px 20px;
+     background-color: #3498db;
+     color: #fff;
+     border: none;
+     border-radius: 0 20px 20px 0;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+ }
+
+ .search-form .search-btn:hover {
+     background-color: #2980b9;
+ }
+
+ /* .search-form .search-btn {
+    padding: 12px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+} */
+
+ .admin-nav {
+     display: flex;
+     align-items: center;
+     gap: 20px;
+ }
+
+ .admin-nav ul {
+     display: flex;
+     gap: 15px;
+     list-style: none;
+     margin: 0;
+     padding: 0;
+ }
+
+ .admin-nav ul li a {
+     color: #fff;
+     text-decoration: none;
+     font-size: 14px;
+     font-weight: bold;
+     transition: color 0.3s ease;
+ }
+
+ .admin-nav ul li a:hover {
+     color: #007bff;
+ }
+
+ .admin-avatar-link {
+     margin-left: auto;
+     text-decoration: none;
+ }
+
+
+ /* Danh sách sản phẩm - 4 cột */
+ .list-product {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     /* 4 cột */
+     gap: 10px;
+     /* Giảm khoảng cách giữa các item */
+     padding: 0 20px;
+     margin: 0;
+     width: 100%;
+     box-sizing: border-box;
+     overflow: hidden;
+     /* Ngăn scroll ngang */
+ }
+
+ /* Các item trong danh sách sản phẩm */
+ .item {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     /* Đảm bảo các phần tử được căn đều từ trên xuống dưới */
+     background-color: lightgrey;
+     padding: 10px;
+     border-radius: 8px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     overflow: hidden;
+     font-size: 14px;
+     height: 100%;
+     /* Đảm bảo item có chiều cao đầy đủ */
+ }
+
+ /* Đảm bảo rằng ảnh luôn có tỷ lệ đúng */
+ .item img {
+     width: 100%;
+     height: auto;
+     border-radius: 8px;
+     transition: transform 0.3s ease;
+ }
+
+ /* Tăng kích thước ảnh khi hover */
+ .item:hover img {
+     transform: scale(1.05);
+ }
+
+ .item h2 {
+     font-size: 15px;
+     color: #333;
+     margin-top: 10px;
+     flex-grow: 1;
+     /* Làm cho tiêu đề chiếm không gian còn lại */
+ }
+
+ /* Giá và khuyến mãi */
+ .price {
+     font-size: 14px;
+     color: #007bff;
+     margin-top: 10px;
+ }
+
+ .discount {
+     color: red;
+     font-size: 14px;
+     margin-left: 5px;
+ }
+
+ /* Nút nhóm */
+ .button-group {
+     margin-top: 10px;
+     display: flex;
+     justify-content: space-between;
+     /* Căn đều nút */
+     align-items: center;
+     /* Căn chỉnh nút dọc theo chiều ngang */
+     width: 100%;
+ }
+
+ /* Định dạng các nút */
+ .button-group a {
+     display: inline-block;
+     padding: 5px 8px;
+     background-color: #007bff;
+     color: white;
+     text-decoration: none;
+     border-radius: 5px;
+     font-size: 13px;
+     transition: background-color 0.3s, color 0.3s;
+     text-align: center;
+     flex-basis: 48%;
+     /* Đảm bảo các nút có kích thước đồng đều */
+ }
+
+ .button-group a:hover {
+     background-color: #0056b3;
+     color: #fff;
+ }
+
+ /* Điều chỉnh cho màn hình nhỏ */
+ @media (max-width: 1200px) {
+     .list-product {
+         grid-template-columns: repeat(3, 1fr);
+         /* 3 cột cho màn hình nhỏ */
+     }
+ }
+
+ .button-group {
+     display: flex;
+     justify-content: center;
+     gap: 10px;
+     margin-top: 15px;
+ }
+
+ .edit,
+ .delete,
+ .detail {
+     background-color: #007bff;
+     color: white;
+     text-decoration: none;
+     padding: 8px 12px;
+     border-radius: 5px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 14px;
+     transition: background-color 0.3s;
+ }
+
+ .edit:hover,
+ .delete:hover,
+ .detail:hover {
+     background-color: #0056b3;
+ }
+
+ .edit i,
+ .delete i,
+ .detail i {
+     margin-right: 5px;
+ }
+
+ /* Điều chỉnh cho màn hình nhỏ */
+ @media (max-width: 1200px) {
+     .list-product {
+         grid-template-columns: repeat(4, 1fr);
+         /* 4 cột cho màn hình trung bình */
+     }
+ }
+
+ @media (max-width: 992px) {
+     .list-product {
+         grid-template-columns: repeat(3, 1fr);
+         /* 3 cột cho màn hình nhỏ */
+     }
+ }
+
+ @media (max-width: 768px) {
+     .list-product {
+         grid-template-columns: repeat(2, 1fr);
+         /* 2 cột cho thiết bị di động */
+     }
+ }
+
+ @media (max-width: 480px) {
+     .list-product {
+         grid-template-columns: 1fr;
+         /* 1 cột cho thiết bị di động nhỏ */
+     }
+ }
+
+ /* css pagination */
+
+
+ /* Responsive styles */
+ @media (max-width: 768px) {
+
+     .pagination a,
+     .pagination span {
+         width: 30px;
+         height: 30px;
+         font-size: 14px;
+     }
+
+     .pagination {
+         gap: 5px;
+     }
+ }
+
+
+ /* css feature courses */
+
+ .featured-courses {
+     margin: 40px 0;
+     position: relative;
+ }
+
+ .featured-courses h2 {
+     text-align: center;
+     margin-bottom: 20px;
+     font-size: 24px;
+     color: #333;
+ }
+
+ .featured-courses .slider-container {
+     position: relative;
+     overflow: hidden;
+     padding: 10px 0;
+ }
+
+ .featured-courses .feature-product {
+     display: flex;
+     transition: transform 0.5s ease-in-out;
+     overflow: hidden;
+ }
+
+ .featured-courses .feature-product .item {
+     flex: 0 0 50%;
+     /* Chỉ 2 sản phẩm */
+     max-width: 50%;
+     text-align: center;
+     padding: 15px;
+     margin: 0 10px;
+     background: #fff;
+     border-radius: 8px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     transition: transform 0.3s ease;
+ }
+
+ .featured-courses .feature-product .item img {
+     width: 100%;
+     height: auto;
+     margin-bottom: 10px;
+     border-radius: 5px;
+ }
+
+ .featured-courses .feature-product .item h2 {
+     font-size: 18px;
+     margin-bottom: 10px;
+     color: #555;
+ }
+
+ .featured-courses .feature-product .item p.price {
+     font-size: 16px;
+     color: #e74c3c;
+ }
+
+ .featured-courses .slider-btn {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     background-color: #333;
+     color: #fff;
+     border: none;
+     border-radius: 50%;
+     padding: 10px;
+     cursor: pointer;
+     z-index: 10;
+     opacity: 0.8;
+     transition: opacity 0.3s;
+ }
+
+ .featured-courses .slider-btn:hover {
+     opacity: 1;
+ }
+
+ .featured-courses .slider-btn.prev {
+     left: 10px;
+ }
+
+ .featured-courses .slider-btn.next {
+     right: 10px;
+ }

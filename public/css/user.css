@@ -1,0 +1,291 @@
+/* Kết nối font Poppins từ Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Đặt font Poppins cho toàn bộ trang */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    background: linear-gradient(-45deg, tomato, lightgreen, pink, orange);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+/* Header */
+.user-header {
+    background-color: #2c3e50;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+    max-height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover .logo {
+    transform: scale(1.1);
+}
+
+
+/* Navigation */
+.user-nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.user-nav ul li a:hover {
+    color: turquoise;
+}
+
+/* Cart Icon */
+.cart-icon {
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.cart-icon .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: #e74c3c;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* User Avatar */
+.user-avatar-link {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.user-avatar:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+
+/* Danh sách sản phẩm - 4 cột */
+.list-product {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 cột */
+    gap: 10px;
+    /* Giảm khoảng cách giữa các item */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* Ngăn scroll ngang */
+    padding: 0 20px;
+}
+
+/* Các item trong danh sách sản phẩm */
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Đảm bảo các phần tử được căn đều từ trên xuống dưới */
+    background-color: lightgrey;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    font-size: 14px;
+    height: 100%;
+    /* Đảm bảo item có chiều cao đầy đủ */
+}
+
+/* Đảm bảo rằng ảnh luôn có tỷ lệ đúng */
+.item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Tăng kích thước ảnh khi hover */
+.item:hover img {
+    transform: scale(1.05);
+}
+
+.item h2 {
+    font-size: 15px;
+    color: #333;
+    margin-top: 10px;
+    flex-grow: 1;
+    /* Làm cho tiêu đề chiếm không gian còn lại */
+}
+
+/* Giá và khuyến mãi */
+.price {
+    font-size: 14px;
+    color: #007bff;
+    margin-top: 10px;
+}
+
+.discount {
+    color: red;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/* Nút nhóm */
+.button-group {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    /* Căn đều nút */
+    align-items: center;
+    /* Căn chỉnh nút dọc theo chiều ngang */
+    width: 100%;
+}
+
+/* Định dạng các nút */
+.button-group a {
+    display: inline-block;
+    padding: 5px 8px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 13px;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+    flex-basis: 48%;
+    /* Đảm bảo các nút có kích thước đồng đều */
+}
+
+.button-group a:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* Điều chỉnh cho màn hình nhỏ */
+@media (max-width: 1200px) {
+    .list-product {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 cột cho màn hình nhỏ */
+    }
+}
+
+@media (max-width: 992px) {
+    .list-product {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cột cho màn hình nhỏ hơn */
+    }
+}
+
+@media (max-width: 768px) {
+    .list-product {
+        grid-template-columns: 1fr;
+        /* 1 cột cho thiết bị di động */
+    }
+}
+
+/* css pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pagination a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    color: #3498db;
+    text-decoration: none;
+    border: 2px solid #3498db;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #3498db;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.pagination a.disabled {
+    color: #ccc;
+    border-color: #ccc;
+    pointer-events: none;
+    /* Không cho phép click */
+}
+
+.pagination a.active {
+    background-color: #3498db;
+    color: #fff;
+    border-color: #3498db;
+    transform: scale(1.1);
+}
+
+.pagination a svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* css feature courses */
+
+

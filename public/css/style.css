@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #24252A;
+}
+
+li,
+a,
+button {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+.logo {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.nav__links {
+    list-style: none;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+    color: #0bafd8;
+}
+
+/* Dropdown Menu Style */
+/* .dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    top: 100%;
+    left: 0px;
+    width: 150px;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.dropdown-content li {
+    padding: 10px 15px;
+    margin: 0;
+    border: none;
+    position: relative;
+}
+
+.dropdown-content li:not(:last-child) {
+    border-bottom: 1px solid #555;
+}
+
+.dropdown-content li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    color: #0088a9;
+}
+
+.dropdown a:hover {
+    color: transparent;
+} */
+
+
+/* Dropdown Menu Style */
+.dropdown {
+    position: relative;
+    z-index: 10;
+    /* Menu luôn nổi phía trên */
+    width: 200px !important; /* Đảm bảo chiều rộng menu tăng */
+    display: block !important;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    top: 100%;
+    left: 0;
+    width: 400px;
+    /* Tăng chiều rộng menu */
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    /* Thêm bóng */
+    border-radius: 5px;
+    /* Bo góc */
+    overflow: hidden;
+}
+
+.dropdown-content li {
+    padding: 10px 15px;
+    margin: 0;
+    border: none;
+    position: relative;
+    white-space: nowrap;
+    /* Không cho xuống dòng */
+}
+
+.dropdown-content li:not(:last-child) {
+    border-bottom: 1px solid #555;
+}
+
+.dropdown-content li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    color: #0088a9;
+}
+
+.dropdown a:hover {
+    color: transparent;
+}
+
+
+button {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* hiện thị danh sách sản phẩm */
+
+/* responsive cho từng equipment*/
+@media screen and (min-width: 768px) and (max-width: 979px) {
+
+    .list-product {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media screen and (min-width: 512px) and (max-width: 767px) {
+    .list-product {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 511px) {
+    .list-product {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    margin-bottom: 20px;
+}
+
+.footer-content h3 {
+    margin-bottom: 10px;
+}
+
+.footer-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-content ul li {
+    margin: 5px 0;
+}
+
+.footer-bottom {
+    font-size: 14px;
+}
+
+/* table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-size: 18px;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+img {
+    max-width: 100px;
+    height: auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.add-link {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
